@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d5e0d4; /* Green background color applied to the entire page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body takes the full viewport height */
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  /* Header */
+  header {
+    margin: 20px 0;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
   }
-}
+  
+  header p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  /* Text Summarizer Tool Container */
+  .summarizer-tool {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    background-color: white; /* White background for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Controls Container */
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 20px;
+  }
+  
+  .controls label {
+    font-size: 1em;
+  }
+  
+  /* Dropdown Styling */
+  select {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Textareas Container */
+  .textareas-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+  
+  .textarea-wrapper {
+    position: relative;
+    width: 48%;
+  }
+  
+  .text-input, .summary-output {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+  }
+  
+  /* Icon Buttons */
+  .icon-buttons {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    gap: 5px;
+  }
+  
+  .icon-buttons button {
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .icon-buttons button:hover {
+    background-color: #bbb;
+  }
+  
+  /* Summarize Button */
+  .summarize-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .summarize-button:hover {
+    background-color: #45a049;
+  }
+  
