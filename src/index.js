@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './App.css';
-import TxStool from './TxStool';
+import TxStool from './screens/TxStool';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
