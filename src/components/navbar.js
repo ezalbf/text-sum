@@ -1,10 +1,16 @@
 import React from 'react'
+import '../css/navbar.css'
 
 function navbar() {
   return (
-    <div>
-      
-    </div>
+    <nav>
+      <div>
+        
+      </div>
+      <div>
+
+      </div>
+    </nav>
   )
 }
 

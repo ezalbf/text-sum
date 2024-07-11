@@ -19,7 +19,8 @@ const TxStool = () => {
   return (
     <>
     <NavBar />
- 
+    <div className='container'>
+        
     <h1 class='top-sec'>Text Summarizer Tool</h1>
     <p class='top-secp'>Why read more when you can read less?</p>
       
@@ -80,6 +81,7 @@ const TxStool = () => {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };

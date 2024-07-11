@@ -5,10 +5,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #d5e0d4; /* Green background color applied to the entire page */
+    min-height: 100vh; /* Ensure the body takes the full viewport height */
+  }
+
+  .container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Ensure the body takes the full viewport height */
   }
   
   /* Header */
@@ -39,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 480px;
+    height: 450px;
   }
   
   /* Controls Container */
@@ -84,7 +87,7 @@ body {
   
   .text-input, .summary-output {
     width: 100%;
-    height: 380px;
+    height: 360px;
     padding: 10px;
     font-size: 1em;
     border: 1px solid #000;
@@ -100,7 +103,7 @@ body {
     width: 550px;
     border-top: 1px solid #000;
     justify-content: space-between;
-    top: 359px;
+    top: 337px;
     padding: 7px 10px;
   }
 
@@ -111,7 +114,7 @@ body {
     width: 550px;
     border-top: 1px solid #000;
     justify-content: flex-end;
-    top: 359px;
+    top: 337px;
     padding: 7px 10px;
   }
   
