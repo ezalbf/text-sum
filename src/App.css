@@ -35,7 +35,7 @@ body {
     width: 5000px;
     max-width: 1200px;
     padding: 10px 0;
-    background-color: white; /* White background for the container */
+    background-color: #faf6f4; /* White background for the container */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -93,6 +93,7 @@ body {
     border: 1px solid #000;
     border-radius: 10px;
     resize: none;
+    background-color: #faf6f4;
   }
   
   /* Icon Buttons */
@@ -151,4 +152,4 @@ body {
     margin: 0;
   }
 
-   
+  
