@@ -76,7 +76,8 @@ const TxStool = () => {
                   state="morph-trash-full-to-empty"> 
               </lord-icon> {/* Delete Icon */}
 
-              <button>&#128194;</button> {/* Copy Icon */}
+              
+              {/*<button>&#128194;</button> {/* Copy Icon */}
             </div>
           </div>
         </div>
