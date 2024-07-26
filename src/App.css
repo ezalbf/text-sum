@@ -58,8 +58,6 @@ body {
     gap: 50px;
     margin: 0 20px;
   }
-
-   
   
   /* Dropdown Styling */
   select {
@@ -105,7 +103,7 @@ body {
     align-items: center;
     width: 100%;
     border: 1px solid #000;
-    border-top: none; /* Remove top border as it's connected to the textarea */
+    border-top: none; 
     border-radius: 0 0 10px 10px;
     padding: 7px 10px;
     background-color: #faf6f4;
