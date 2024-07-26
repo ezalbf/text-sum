@@ -76,13 +76,15 @@ body {
     width: 95%;
     gap: 1%;
     margin-right: 10px;
-    height: 300px;
+    height: 395px;
   }
   
   .textarea-wrapper {
     position: relative;
     flex: 1;
     margin: 0 8px;
+    display: flex;
+    flex-direction: column;
   }
   
   .text-input, .summary-output {
@@ -91,32 +93,31 @@ body {
     padding: 10px;
     font-size: 1em;
     border: 1px solid #000;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     resize: none;
     background-color: #faf6f4;
   }
   
   /* Icon Buttons */
-  .input-buttons {
+  .input-buttons,.sum-icons{
     display: flex;
-    position: absolute;
-    gap: 5px;
-    width: 550px;
-    border-top: 1px solid #000;
     justify-content: space-between;
-    top: 337px;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #000;
+    border-top: none; /* Remove top border as it's connected to the textarea */
+    border-radius: 0 0 10px 10px;
     padding: 7px 10px;
+    background-color: #faf6f4;
   }
 
-  .sum-icons {
-    display: flex;
-    position: absolute;
-    gap: 5px;
-    width: 550px;
-    border-top: 1px solid #000;
+  .sum-icons { 
     justify-content: flex-end;
-    top: 337px;
-    padding: 7px 10px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 5px;
   }
   
   /* Summarize Button */
@@ -137,7 +138,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .summarize-button:hover {
     background-color: #ccc;
   }
@@ -151,5 +152,3 @@ body {
     font-weight: 450;
     margin: 0;
   }
-
-  

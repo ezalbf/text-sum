@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
 import '../App.css';
 import NavBar from '../components/navbar'
+import axios from 'axios';
 
 const TxStool = () => {
   const [text, setText] = useState('');
   const [summary, setSummary] = useState('');
   const [mode, setMode] = useState('Paragraph');
   const [length, setLength] = useState('Concise');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleTextChange = (e) => {
     setText(e.target.value);
   };
-
-  const handleSummarize = () => {
-    setSummary(`Summarized text in ${mode} mode with ${length} length.`);
+  
+  const handleSummarize = async () => {
+    setIsLoading(true);
+    try {
+      const response = await axios.post('http://localhost:8000/summarize', {
+        text: text,
+        max_length: length === 'Concise' ? 100 : 200,
+        min_length: length === 'Concise' ? 30 : 50,
+      });
+      setSummary(response.data.summary);
+    } catch (error) {
+      console.error('Error summarizing text:', error);
+      setSummary('An error occurred while summarizing the text.');
+    }
+    setIsLoading(false);
   };
-
+  
   return (
     <>
     <NavBar />
@@ -62,7 +76,9 @@ const TxStool = () => {
                     state="morph-trash-full-to-empty"> 
                 </lord-icon> {/* Delete Icon */}
               </div>
-              <button onClick={handleSummarize} className="summarize-button">Summarize</button>
+              
+              <button onClick={handleSummarize} className="summarize-button" disabled={isLoading}>
+              {isLoading ? 'Summarizing...' : 'Summarize'}</button>
             </div>
           </div>
 
