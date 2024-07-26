@@ -29,6 +29,14 @@ const TxStool = () => {
     }
     setIsLoading(false);
   };
+
+  const handleClearText = () => {
+    setText('');
+  };
+
+  const handleClearSummary = () => {
+    setSummary('');
+  };
   
   return (
     <>
@@ -73,10 +81,11 @@ const TxStool = () => {
                 <lord-icon className='delete'
                     src="https://cdn.lordicon.com/wpyrrmcq.json"
                     trigger="morph"
-                    state="morph-trash-full-to-empty"> 
+                    state="morph-trash-full-to-empty"
+                    onClick={handleClearText}> 
                 </lord-icon> {/* Delete Icon */}
               </div>
-              
+
               <button onClick={handleSummarize} className="summarize-button" disabled={isLoading}>
               {isLoading ? 'Summarizing...' : 'Summarize'}</button>
             </div>
@@ -89,7 +98,8 @@ const TxStool = () => {
             <lord-icon className='delete'
                   src="https://cdn.lordicon.com/wpyrrmcq.json"
                   trigger="morph"
-                  state="morph-trash-full-to-empty"> 
+                  state="morph-trash-full-to-empty"
+                  onClick={handleClearSummary}> 
               </lord-icon> {/* Delete Icon */}
 
               
