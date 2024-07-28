@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef } from 'react';
 import '../App.css';
 import NavBar from '../components/navbar'
 import axios from 'axios';
@@ -9,6 +9,7 @@ const TxStool = () => {
   const [mode, setMode] = useState('Paragraph');
   const [length, setLength] = useState('Concise');
   const [isLoading, setIsLoading] = useState(false);
+  const fileInputRef = useRef(null);
 
   const handleTextChange = (e) => {
     setText(e.target.value);
@@ -36,6 +37,34 @@ const TxStool = () => {
 
   const handleClearSummary = () => {
     setSummary('');
+  };
+
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const fileExtension = file.name.split('.').pop().toLowerCase();
+      if (['txt', 'pdf', 'docx', 'pptx'].includes(fileExtension)) {
+        try {
+          const formData = new FormData();
+          formData.append('file', file);
+          const response = await axios.post('http://localhost:8000/upload', formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          });
+          setText(response.data.text);
+        } catch (error) {
+          console.error('Error uploading file:', error);
+          alert('Error uploading file. Please try again.');
+        }
+      } else {
+        alert('Please upload a TXT, PDF, DOCX, or PPTX file.');
+      }
+    }
+  };
+
+  const triggerFileInput = () => {
+    fileInputRef.current.click();
   };
   
   return (
@@ -71,7 +100,8 @@ const TxStool = () => {
               <div className='icons'>
                 <lord-icon className='upload'
                   src="https://cdn.lordicon.com/smwmetfi.json"
-                  trigger="hover"></lord-icon> {/* Upload Icon */}
+                  trigger="hover"
+                  onClick={triggerFileInput}></lord-icon> {/* Upload Icon */}
 
                 <lord-icon className='upload image'
                     src="https://cdn.lordicon.com/baxknfaw.json"
@@ -89,6 +119,15 @@ const TxStool = () => {
               <button onClick={handleSummarize} className="summarize-button" disabled={isLoading}>
               {isLoading ? 'Summarizing...' : 'Summarize'}</button>
             </div>
+
+            <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              onChange={handleFileUpload}
+              accept=".txt,.pdf,.docx,.pptx"
+            />
+
           </div>
 
           <div className="textarea-wrapper">
