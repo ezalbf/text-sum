@@ -25,8 +25,8 @@ const TxStool = () => {
       });
       setSummary(response.data.summary);
     } catch (error) {
-      console.error('Error summarizing text:', error);
-      setSummary('An error occurred while summarizing the text.');
+      console.error('Error summarizing text:', error.response ? error.response.data : error.message);
+      setSummary(`An error occurred while summarizing the text: ${error.response ? error.response.data.detail : error.message}`);
     }
     setIsLoading(false);
   };
